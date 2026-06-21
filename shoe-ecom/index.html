@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StrideForge | 頂級專業鞋履與戶外裝備商務網站</title>
+  <meta name="description" content="StrideForge - 匯聚頂尖科技與美學的鞋履品牌，為您提供男鞋、女鞋、休閒鞋、運動機能鞋、運動配件與高品質保養組。">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for E-Commerce interface -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Design CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Blur Orbs for Rich Glow Aesthetics -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="#/" class="logo-link">
+        <img src="assets/images/strideforge_logo.png" alt="StrideForge Logo" class="brand-logo-img" onerror="this.src='assets/images/men_apex_runner.jpg'">
+        <span class="brand-name">Stride<span>Forge</span></span>
+      </a>
+
+      <!-- Navigation links for categories -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#/" class="nav-link active" data-path="home">首頁</a>
+        <a href="#/about" class="nav-link" data-path="about">公司簡介</a>
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">商品分類 <i class="fa-solid fa-chevron-down"></i></span>
+          <div class="dropdown-content">
+            <a href="#/category/men" class="dropdown-link"><i class="fa-solid fa-mars"></i> 男鞋專區</a>
+            <a href="#/category/women" class="dropdown-link"><i class="fa-solid fa-venus"></i> 女鞋專區</a>
+            <a href="#/category/casual" class="dropdown-link"><i class="fa-solid fa-couch"></i> 各式休閒鞋</a>
+            <a href="#/category/sports" class="dropdown-link"><i class="fa-solid fa-running"></i> 專業運動鞋</a>
+            <a href="#/category/socks" class="dropdown-link"><i class="fa-solid fa-socks"></i> 潮流棉襪</a>
+            <a href="#/category/acc" class="dropdown-link"><i class="fa-solid fa-tags"></i> 實用配件</a>
+            <a href="#/category/others" class="dropdown-link"><i class="fa-solid fa-cube"></i> 其他商品</a>
+          </div>
+        </div>
+        <a href="#/contact" class="nav-link" data-path="contact">聯絡我們</a>
+      </nav>
+
+      <!-- Search and Quick Action Controls -->
+      <div class="header-actions">
+        <!-- Search bar -->
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="搜尋鞋款、配件...">
+          <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <!-- User profile panel link -->
+        <div class="user-panel" id="userPanel">
+          <a href="#/login" class="user-btn" id="userBtn"><i class="fa-regular fa-user"></i> <span class="user-text">登入 / 註冊</span></a>
+        </div>
+
+        <!-- Shopping cart button -->
+        <button class="cart-btn" id="cartBtn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <span class="brand-name">Stride<span>Forge</span></span>
+      <button class="close-mobile-btn" id="closeMobileBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#/" class="mobile-link">首頁</a>
+      <a href="#/about" class="mobile-link">公司簡介</a>
+      <div class="mobile-section-title">商品分類</div>
+      <a href="#/category/men" class="mobile-link indent-link">男鞋專區</a>
+      <a href="#/category/women" class="mobile-link indent-link">女鞋專區</a>
+      <a href="#/category/casual" class="mobile-link indent-link">各式休閒鞋</a>
+      <a href="#/category/sports" class="mobile-link indent-link">專業運動鞋</a>
+      <a href="#/category/socks" class="mobile-link indent-link">潮流棉襪</a>
+      <a href="#/category/acc" class="mobile-link indent-link">實用配件</a>
+      <a href="#/category/others" class="mobile-link indent-link">其他商品</a>
+      <div class="mobile-divider"></div>
+      <a href="#/contact" class="mobile-link">聯絡我們</a>
+    </div>
+  </div>
+
+  <!-- Persistent Shopping Cart Sidebar Drawer -->
+  <div class="cart-sidebar-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>購物車清單 (<span id="cartItemCount">0</span>)</h3>
+      <button class="close-cart-btn" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <!-- Cart Items list -->
+    <div class="cart-sidebar-items" id="cartSidebarItems">
+      <!-- Dynamically rendered items -->
+      <div class="empty-cart-message">
+        <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        <p>您的購物車是空的</p>
+        <a href="#/" class="go-shop-btn" id="closeCartAndShopBtn">立即前往選購</a>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar Footer -->
+    <div class="cart-sidebar-footer" id="cartSidebarFooter" style="display: none;">
+      <div class="subtotal-row">
+        <span>小計金額</span>
+        <span class="subtotal-price" id="cartSubtotal">NT$ 0</span>
+      </div>
+      <button class="checkout-submit-btn" id="checkoutBtn">前往結帳</button>
+    </div>
+  </aside>
+
+  <!-- Main View Render Area -->
+  <main id="app" class="app-container">
+    <!-- Rendered content goes here -->
+  </main>
+
+  <!-- Interactive Modal for Checkout Checkout Simulation -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container" id="modalContainer">
+      <!-- Content loaded dynamically based on action (e.g. checkout success or login error) -->
+    </div>
+  </div>
+
+  <!-- Floating Notification System (Toast) -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand-section">
+        <span class="brand-name">Stride<span>Forge</span></span>
+        <p class="footer-desc">StrideForge 致力於將極致的人體工學科技與當代潮流美學完美融合，為每一位探險者、運動員與都市行者，打造最舒適的行走支撐與極致體驗。</p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-line"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h4>品牌資訊</h4>
+          <ul>
+            <li><a href="#/about">公司簡介</a></li>
+            <li><a href="#">核心技術</a></li>
+            <li><a href="#">永續發展</a></li>
+            <li><a href="#/contact">加入我們</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>熱門分類</h4>
+          <ul>
+            <li><a href="#/category/men">男鞋專區</a></li>
+            <li><a href="#/category/women">女鞋專區</a></li>
+            <li><a href="#/category/sports">專業運動鞋</a></li>
+            <li><a href="#/category/casual">各式休閒鞋</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>客戶服務</h4>
+          <ul>
+            <li><a href="#/contact">聯絡我們</a></li>
+            <li><a href="#">退換貨政策</a></li>
+            <li><a href="#">配送與付款資訊</a></li>
+            <li><a href="#">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>訂閱電子報</h4>
+        <p>首度訂閱即可獲得 NT$ 200 折價券，第一時間掌握最新鞋款上市消息！</p>
+        <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('感謝您的訂閱！折價券代碼已寄送至您的信箱。'); this.reset();">
+          <input type="email" placeholder="輸入您的電子信箱" required>
+          <button type="submit">訂閱</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 StrideForge Co., Ltd. 版權所有。本網站僅供模擬電商演示使用。</p>
+      <div class="footer-payment-icons">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-jcb"></i>
+        <i class="fa-brands fa-cc-apple-pay"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core App Controller Script -->
+  <script src="app.js"></script>
+</body>
+</html>
